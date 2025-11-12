@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="kk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Свадьба Рымыз & Сезім</title>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <title>Бауыржан & Мадина - 25.09.25</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -13,844 +15,748 @@
         }
 
         body {
-            font-family: 'Roboto', sans-serif;
-            background: #fefefe;
-            color: #333;
-            line-height: 1.6;
+            font-family: Georgia, serif;
+            background: white;
             overflow-x: hidden;
-            text-align: center;
-        }
-
-        /* Анимации */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
-        }
-
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.05);
-            }
-            100% {
-                transform: scale(1);
-            }
-        }
-
-        @keyframes heartBeat {
-            0%, 100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.1);
-            }
-        }
-
-        /* Общие стили */
-        section {
-            min-height: 100vh;
-            padding: 80px 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            position: relative;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 430px;
             margin: 0 auto;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            background: white;
+            position: relative;
+            min-height: 100vh;
         }
 
-        /* Главная секция */
-        #hero {
-            background: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.9)), 
-                        url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, #9ca3af, #d1d5db);
+        }
+
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.3);
         }
 
         .hero-content {
-            animation: fadeInUp 1s ease-out;
+            position: relative;
+            z-index: 10;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            height: 100%;
+            color: white;
+            padding: 0 2rem;
         }
 
-        .wedding-title {
+        .hero-title {
+            font-size: 40px;
+            letter-spacing: 0.2em;
+            margin-bottom: 2rem;
+            text-align: center;
+            filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+            line-height: 1.4;
+        }
+
+        .hero-names {
+            font-family: 'Playfair Display', serif;
+            font-size: 44px; /* Было 56px */
+            margin-bottom: 2.5rem;
+            text-align: center;
+            line-height: 1.2;
+            filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+        }
+
+
+        .hero-date {
+            font-size: 32px;
+            letter-spacing: 0.1em;
+            margin-top: 2rem;
+            filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+        }
+
+        /* Torn Paper Effect */
+        .torn-paper {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4rem;
+            background: #f5f1eb;
+        }
+
+        .torn-paper svg {
+            width: 100%;
+            height: 1.5rem;
+            margin-top: -1.5rem;
+        }
+
+        /* Content Sections */
+        .content-section {
+            position: relative;
+            background: #f5f1eb;
+            padding: 3rem 2rem;
+            overflow: hidden;
+        }
+
+        /* Kazakh Pattern Background */
+        .pattern-bg {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+        }
+
+        .pattern-layer-1 {
+            position: absolute;
+            inset: 0;
+            opacity: 0.12;
+            background-size: 400px 400px;
+            background-position: center;
+            background-repeat: repeat;
+            filter: sepia(0.4) saturate(1.2) hue-rotate(-10deg) brightness(1.15) contrast(0.85);
+            mix-blend-mode: multiply;
+        }
+
+        .pattern-layer-2 {
+            position: absolute;
+            inset: 0;
+            opacity: 0.06;
+            background-size: 250px 250px;
+            background-position: 100px 100px;
+            background-repeat: repeat;
+            filter: sepia(0.5) saturate(1.3) hue-rotate(-5deg) brightness(1.2);
+            mix-blend-mode: overlay;
+        }
+
+        .content-inner {
+            position: relative;
+            z-index: 10;
+        }
+
+        .section-title {
             font-family: 'Dancing Script', cursive;
-            font-size: 4.5rem;
-            margin-bottom: 20px;
-            color: #8b6b4d;
-            animation: float 3s ease-in-out infinite;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            font-size: 40px;
+            color: #4a4a4a;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .invitation-text {
+            text-align: center;
+            color: #4a4a4a;
+            font-size: 15px;
+            letter-spacing: 0.15em;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .invitation-label {
+            text-align: center;
+            color: #4a4a4a;
+            font-size: 16px;
+            letter-spacing: 0.2em;
+            margin-bottom: 1.5rem;
         }
 
         .couple-names {
-            font-family: 'Dancing Script', cursive;
-            font-size: 3.5rem;
-            margin-bottom: 30px;
-            color: #5d4037;
-            animation: heartBeat 2s ease-in-out infinite;
+           font-family: 'Playfair Display', serif;
+           font-size: 40px; /* Было 48px */
+           color: #4a4a4a;
+           text-align: center;
+           margin-bottom: 2rem;
+        } 
+
+
+        /* Decorative Box */
+        .decorative-box {
+            border: 2px solid #c9a882;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(4px);
         }
 
-        .invite-btn {
-            background: #8b6b4d;
-            color: white;
-            border: none;
-            padding: 18px 50px;
-            font-size: 1.3rem;
-            border-radius: 30px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin-top: 40px;
-            font-family: 'Roboto', sans-serif;
-            font-weight: 500;
-            box-shadow: 0 10px 30px rgba(139, 107, 77, 0.3);
+        .decorative-box-inner {
+            border: 1px dashed #c9a882;
+            border-radius: 0.25rem;
+            padding: 1rem;
         }
 
-        .invite-btn:hover {
-            background: #6d4c41;
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-        }
-
-        /* Секция даты */
-        #date-section {
-            background: linear-gradient(rgba(248, 244, 240, 0.9), rgba(248, 244, 240, 0.9)), 
-                        url('https://images.unsplash.com/photo-1465495976277-4387d4b0e4a6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-        }
-
-        .calendar-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 50px;
-            justify-content: center;
-            align-items: center;
-            margin-top: 50px;
-            width: 100%;
-        }
-
-        .calendar {
-            width: 350px;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
-            overflow: hidden;
-            animation: pulse 3s infinite;
-        }
-
-        .calendar-header {
-            background: linear-gradient(135deg, #8b6b4d, #6d4c41);
-            color: white;
-            padding: 25px;
+        .decorative-box-text {
             text-align: center;
-        }
-
-        .calendar-month {
-            font-size: 1.8rem;
-            font-weight: 500;
-            margin-bottom: 5px;
-        }
-
-        .calendar-year {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-
-        .calendar-body {
-            padding: 20px;
-        }
-
-        .calendar-weekdays {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            gap: 5px;
-            margin-bottom: 15px;
-        }
-
-        .weekday {
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: #8b6b4d;
-            padding: 10px;
-        }
-
-        .calendar-days {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            gap: 8px;
-        }
-
-        .calendar-day {
-            padding: 12px 8px;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-weight: 500;
-        }
-
-        .calendar-day.other-month {
-            color: #ccc;
-        }
-
-        .calendar-day.wedding-day {
-            background: #8b6b4d;
-            color: white;
-            transform: scale(1.1);
-            box-shadow: 0 5px 15px rgba(139, 107, 77, 0.4);
-            animation: heartBeat 2s infinite;
-        }
-
-        .calendar-day:hover:not(.wedding-day) {
-            background: #f0f0f0;
-        }
-
-        .countdown-section {
-            background: white;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-            max-width: 500px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .countdown {
-            display: flex;
-            gap: 20px;
-            margin: 40px 0;
-            flex-wrap: wrap;
-            justify-content: center;
-            width: 100%;
-        }
-
-        .countdown-item {
-            background: linear-gradient(135deg, #8b6b4d, #6d4c41);
-            color: white;
-            padding: 25px 15px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            min-width: 100px;
-            transition: transform 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .countdown-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .countdown-number {
-            font-size: 2.8rem;
-            font-weight: 500;
-            font-family: 'Dancing Script', cursive;
-        }
-
-        .countdown-label {
-            font-size: 1rem;
-            margin-top: 8px;
-            opacity: 0.9;
-        }
-
-        /* Секция расписания */
-        #schedule {
-            background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), 
-                        url('https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-        }
-
-        .schedule-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
-            justify-content: center;
-            margin-top: 50px;
-            width: 100%;
-        }
-
-        .schedule-card {
-            background: white;
-            padding: 50px 40px;
-            border-radius: 25px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            flex: 1;
-            min-width: 350px;
-            max-width: 450px;
-            transition: all 0.4s ease;
-            border-top: 5px solid #8b6b4d;
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .schedule-card:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 5px;
-            background: linear-gradient(90deg, #8b6b4d, #6d4c41);
-        }
-
-        .schedule-card:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 30px 60px rgba(0,0,0,0.15);
-        }
-
-        .schedule-title {
-            font-family: 'Dancing Script', cursive;
-            font-size: 2.5rem;
-            color: #8b6b4d;
-            margin-bottom: 25px;
-            text-align: center;
-        }
-
-        .schedule-time {
-            font-size: 1.5rem;
-            font-weight: 500;
-            margin: 20px 0;
-            color: #5d4037;
-            background: #f8f4f0;
-            padding: 10px 20px;
-            border-radius: 10px;
-            display: inline-block;
-            text-align: center;
-        }
-
-        .schedule-location {
-            font-size: 1.2rem;
-            margin: 15px 0;
-            color: #666;
+            color: #4a4a4a;
+            font-size: 15px;
+            letter-spacing: 0.1em;
             line-height: 1.8;
+        }
+
+        /* Wedding Date Section */
+        .wedding-date-section {
+            position: relative;
+            background: #f5f1eb;
+            padding: 3rem 2rem;
             text-align: center;
+            overflow: hidden;
         }
 
-        .map-btn {
-            background: transparent;
-            border: 2px solid #8b6b4d;
-            color: #8b6b4d;
-            padding: 12px 30px;
-            border-radius: 25px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin-top: 25px;
-            font-weight: 500;
-            font-size: 1.1rem;
-            text-align: center;
+        .wedding-date-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 36px;
+            color: #4a4a4a;
+            margin-bottom: 1rem;
         }
 
-        .map-btn:hover {
-            background: #8b6b4d;
-            color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(139, 107, 77, 0.3);
+        .wedding-date-large {
+            font-family: 'Playfair Display', serif;
+            font-size: 120px;
+            color: #5a7a5a;
+            line-height: 1;
+            margin: 1rem 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
         }
 
-        /* Секция RSVP */
-        #rsvp {
-            background: linear-gradient(rgba(248, 244, 240, 0.95), rgba(248, 244, 240, 0.95)), 
-                        url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+        .wedding-time {
+            font-family: Georgia, serif;
+            font-size: 18px;
+            color: #4a4a4a;
+            letter-spacing: 0.2em;
+            margin-bottom: 2rem;
         }
 
-        .rsvp-form {
-            max-width: 700px;
-            width: 100%;
-            background: white;
-            padding: 60px 50px;
-            border-radius: 25px;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.1);
-            margin-top: 40px;
-            border-top: 5px solid #8b6b4d;
+        .countdown-timer {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .timer-item {
             display: flex;
             flex-direction: column;
             align-items: center;
+            min-width: 70px;
+        }
+
+        .timer-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #4a4a4a;
+            line-height: 1;
+        }
+
+        .timer-label {
+            font-size: 0.75rem;
+            color: #4a4a4a;
+            letter-spacing: 0.1em;
+            margin-top: 0.5rem;
+            text-transform: uppercase;
+        }
+
+        /* Location Section */
+        .location-section {
+            position: relative;
+            background: #f5f1eb;
+            padding: 3rem 2rem;
+            overflow: hidden;
+        }
+
+        .location-icon {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .map-pin-container {
+            position: relative;
+            width: 80px;
+            height: 80px;
+        }
+
+        .location-label {
+            text-align: center;
+            color: #4a4a4a;
+            font-size: 16px;
+            letter-spacing: 0.15em;
+            margin-bottom: 2rem;
+        }
+
+        .location-address {
+            text-align: center;
+            color: #4a4a4a;
+            font-size: 15px;
+            letter-spacing: 0.12em;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .venue-name {
+            font-family: 'Dancing Script', cursive;
+            font-size: 48px;
+            color: #4a4a4a;
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .venue-type {
+            text-align: center;
+            color: #4a4a4a;
+            font-size: 15px;
+            letter-spacing: 0.15em;
+            margin-bottom: 2rem;
+        }
+
+        /* Navigator Button */
+        .navigator-button-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 3rem;
+        }
+
+        .navigator-button {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 2rem;
+            border: 2px solid #5a7a5a;
+            border-radius: 9999px;
+            background: transparent;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .navigator-button:hover {
+            background: #5a7a5a;
+        }
+
+        .navigator-icon {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #5a7a5a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s;
+        }
+
+        .navigator-button:hover .navigator-icon {
+            background: white;
+        }
+
+        .navigator-text {
+            color: #4a4a4a;
+            font-size: 14px;
+            letter-spacing: 0.1em;
+            transition: color 0.3s;
+        }
+
+        .navigator-button:hover .navigator-text {
+            color: white;
+        }
+
+        /* RSVP Form */
+        .rsvp-form {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(4px);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            border: 2px solid #c9a882;
+        }
+
+        .form-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 32px;
+            color: #4a4a4a;
+            text-align: center;
+            margin-bottom: 1.5rem;
         }
 
         .form-group {
-            margin-bottom: 30px;
-            text-align: center;
-            width: 100%;
+            margin-bottom: 1rem;
         }
 
         .form-label {
             display: block;
-            margin-bottom: 12px;
-            font-weight: 500;
-            color: #5d4037;
-            font-size: 1.1rem;
-            text-align: center;
+            margin-bottom: 0.5rem;
+            color: #4a4a4a;
+            font-size: 14px;
+            letter-spacing: 0.05em;
         }
 
         .form-input {
             width: 100%;
-            padding: 18px 20px;
-            border: 2px solid #e0e0e0;
-            border-radius: 12px;
-            font-size: 1.1rem;
-            font-family: 'Roboto', sans-serif;
-            transition: all 0.3s ease;
-            text-align: center;
+            height: 45px;
+            background: white;
+            border: 2px solid #c9a882;
+            border-radius: 0.5rem;
+            padding: 0 1rem;
+            font-size: 14px;
+            color: #4a4a4a;
+            font-family: Georgia, serif;
+        }
+
+        .form-input::placeholder {
+            color: #bfb5a8;
         }
 
         .form-input:focus {
-            border-color: #8b6b4d;
             outline: none;
-            box-shadow: 0 0 0 3px rgba(139, 107, 77, 0.1);
+            border-color: #5a7a5a;
         }
 
-        .attending-options {
+        .checkbox-container {
             display: flex;
-            gap: 20px;
-            margin-top: 15px;
-            justify-content: center;
-            width: 100%;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
         }
 
-        .attending-option {
-            flex: 1;
-            max-width: 200px;
+        .checkbox {
+            position: relative;
+            width: 24px;
+            height: 24px;
+            background: white;
+            border: 2px solid #5a7a5a;
+            border-radius: 0.25rem;
+            cursor: pointer;
+            flex-shrink: 0;
+            transition: background 0.3s;
         }
 
-        .attending-option input {
+        .checkbox:hover {
+            background: #f0f0f0;
+        }
+
+        .checkbox.checked {
+            background: white;
+        }
+
+        .checkbox-check {
             display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 16px;
+            height: 16px;
+            color: #5a7a5a;
         }
 
-        .attending-label {
+        .checkbox.checked .checkbox-check {
             display: block;
-            padding: 18px;
-            border: 2px solid #e0e0e0;
-            border-radius: 12px;
-            text-align: center;
+        }
+
+        .checkbox-label {
+            color: #4a4a4a;
+            font-size: 15px;
+            letter-spacing: 0.05em;
             cursor: pointer;
-            transition: all 0.3s ease;
-            font-weight: 500;
-            font-size: 1.1rem;
+        }
+
+        .submit-button {
             width: 100%;
-        }
-
-        .attending-option input:checked + .attending-label {
-            border-color: #8b6b4d;
-            background: #8b6b4d;
-            color: white;
-            transform: scale(1.05);
-        }
-
-        .submit-btn {
-            background: #8b6b4d;
-            color: white;
+            height: 50px;
+            background: #5a7a5a;
             border: none;
-            padding: 20px 50px;
-            font-size: 1.2rem;
-            border-radius: 30px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            width: 100%;
-            max-width: 400px;
-            font-weight: 500;
-            margin-top: 30px;
-            box-shadow: 0 10px 30px rgba(139, 107, 77, 0.3);
-        }
-
-        .submit-btn:hover {
-            background: #6d4c41;
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-        }
-
-        /* Футер */
-        footer {
-            background: linear-gradient(135deg, #5d4037, #3e2723);
+            border-radius: 9999px;
             color: white;
-            padding: 70px 20px;
-            text-align: center;
+            font-size: 16px;
+            letter-spacing: 0.1em;
+            cursor: pointer;
+            transition: background 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            font-family: Georgia, serif;
         }
 
-        .footer-names {
-            font-family: 'Dancing Script', cursive;
-            font-size: 3rem;
-            margin-bottom: 25px;
-            animation: heartBeat 3s ease-in-out infinite;
+        .submit-button:hover {
+            background: #4a6a4a;
         }
 
-        .footer-date {
-            font-size: 1.3rem;
-            margin-bottom: 20px;
-            opacity: 0.9;
-        }
-
-        .footer-text {
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin: 0 auto;
-            opacity: 0.8;
-            line-height: 1.8;
-        }
-
-        /* Адаптивность */
-        @media (max-width: 768px) {
-            .wedding-title {
-                font-size: 3.5rem;
-            }
-            
-            .couple-names {
-                font-size: 2.8rem;
-            }
-            
-            .calendar {
-                width: 320px;
-            }
-            
-            .countdown {
-                gap: 15px;
-            }
-            
-            .countdown-item {
-                min-width: 90px;
-                padding: 20px 12px;
-            }
-            
-            .countdown-number {
-                font-size: 2.2rem;
-            }
-            
-            .schedule-card {
-                min-width: 100%;
-                padding: 40px 30px;
-            }
-            
-            .attending-options {
-                flex-direction: column;
-                gap: 10px;
-                align-items: center;
-            }
-            
-            .attending-option {
-                max-width: 100%;
-                width: 100%;
-            }
-            
-            .rsvp-form {
-                padding: 40px 30px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            section {
-                padding: 60px 15px;
-            }
-            
-            .wedding-title {
-                font-size: 2.8rem;
-            }
-            
-            .couple-names {
-                font-size: 2.2rem;
-            }
-            
-            .calendar {
-                width: 280px;
-            }
-            
-            .countdown-item {
-                min-width: 70px;
-                padding: 15px 8px;
-            }
-            
-            .countdown-number {
-                font-size: 1.8rem;
-            }
+        /* SVG Icons */
+        .icon {
+            display: inline-block;
+            vertical-align: middle;
         }
     </style>
 </head>
 <body>
-    <!-- Главная секция -->
-    <section id="hero">
-        <div class="container hero-content">
-            <h1 class="wedding-title">THE WEDDING</h1>
-            <div class="couple-names">бауыржан & мадина</div>
-            <p style="font-size: 1.3rem; margin-bottom: 20px; max-width: 600px; color: #555;">
-                Ағайын-туыс, құда-жекжат, дос-жараң, әріптестер, қөршілер, жұмыстастар
-            </p>
-            <button class="invite-btn" onclick="scrollToSection('date-section')">БУКАН УНДАГАН</button>
-        </div>
-    </section>
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-bg">
+                <!-- Замените URL на прямую ссылку на ваше изображение -->
+                <img src="https://avatars.dzeninfra.ru/get-zen_doc/1131118/pub_5ceee80de927bd00ae01a19a_5ceee92ed0f1b600b042d59f/scale_1200" alt="Wedding Venue">
+                <div class="hero-overlay"></div>
+            </div>
 
-    <!-- Секция даты и обратного отсчета -->
-    <section id="date-section">
-        <div class="container">
-            <h2 class="wedding-title">Наша свадьба</h2>
-            <div class="couple-names">17 Января 2026</div>
-            
-            <div class="calendar-container">
-                <!-- Календарь на январь 2026 -->
-                <div class="calendar">
-                    <div class="calendar-header">
-                        <div class="calendar-month">Январь 2026</div>
-                    </div>
-                    <div class="calendar-body">
-                        <div class="calendar-weekdays">
-                            <div class="weekday">Пн</div>
-                            <div class="weekday">Вт</div>
-                            <div class="weekday">Ср</div>
-                            <div class="weekday">Чт</div>
-                            <div class="weekday">Пт</div>
-                            <div class="weekday">Сб</div>
-                            <div class="weekday">Вс</div>
-                        </div>
-                        <div class="calendar-days" id="calendar-days">
-                            <!-- Дни календаря будут сгенерированы через JavaScript -->
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="countdown-section">
-                    <h3 style="font-family: 'Dancing Script', cursive; font-size: 2.2rem; margin-bottom: 30px; color: #8b6b4d;">
-                        До нашего дня осталось
-                    </h3>
-                    <div class="countdown">
-                        <div class="countdown-item">
-                            <div class="countdown-number" id="days">0</div>
-                            <div class="countdown-label">Дней</div>
-                        </div>
-                        <div class="countdown-item">
-                            <div class="countdown-number" id="hours">0</div>
-                            <div class="countdown-label">Часов</div>
-                        </div>
-                        <div class="countdown-item">
-                            <div class="countdown-number" id="minutes">0</div>
-                            <div class="countdown-label">Минут</div>
-                        </div>
-                        <div class="countdown-item">
-                            <div class="countdown-number" id="seconds">0</div>
-                            <div class="countdown-label">Секунд</div>
-                        </div>
+            <div class="hero-content">
+                <h1 class="hero-title">WEDDING<br>DAY</h1>
+                <h2 class="hero-names">Бауыржан & Мадина</h2>
+                <p class="hero-date">17.01.2026</p>
+            </div>
+
+            <div class="torn-paper">
+                <svg preserveAspectRatio="none" viewBox="0 0 1200 120">
+                    <path d="M0,0 Q50,40 100,20 T200,20 T300,20 T400,20 T500,20 T600,20 T700,20 T800,20 T900,20 T1000,20 T1100,20 T1200,20 L1200,120 L0,120 Z" fill="#f5f1eb" />
+                </svg>
+            </div>
+        </section>
+
+        <!-- Welcome Section -->
+        <section class="content-section">
+            <div class="pattern-bg">
+                <!-- Замените URL на прямую ссылку на изображение казахского орнамента -->
+                <div class="pattern-layer-1" style="background-image: url('https://i.pinimg.com/236x/fb/a8/04/fba804ed2f2d42e897fd15bb0cb5eebf.jpg?nii=t');"></div>
+                <div class="pattern-layer-2" style="background-image: url('https://i.pinimg.com/236x/fb/a8/04/fba804ed2f2d42e897fd15bb0cb5eebf.jpg?nii=t');"></div>
+            </div>
+
+            <div class="content-inner">
+                <h3 class="section-title">Құрметті қонақтар!</h3>
+
+                <p class="invitation-text">
+                    АҒАЙЫН-ТУЫС, ҚҰДА-ЖЕКЖАТ,<br>
+                    ДОС-ЖАРАН, ӘРІПТЕСТЕР,<br>
+                    КӨРШІЛЕР, ЖҰМЫСТАСТАР
+                </p>
+
+                <p class="invitation-label">СІЗДЕРДІ ҚҰРМЕТПЕН ШАҚЫРАМЫЗ!</p>
+
+                <h2 class="couple-names">Бауыржан & Мадина</h2>
+
+                <div class="decorative-box">
+                    <div class="decorative-box-inner">
+                        <p class="decorative-box-text">
+                            ҮЙЛЕНУ ТОЙЫНА АРНАП ЖАЙҒАН<br>
+                            САЛТАНАТТЫ АҚ ДАСТАРХАНЫМЫЗДЫҢ<br>
+                            ҚҰРМЕТТІ ҚОНАҒЫ БОЛУҒА ШАҚЫРАМЫЗ!
+                        </p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Секция расписания -->
-    <section id="schedule">
-        <div class="container">
-            <h2 class="wedding-title">Расписание</h2>
-            <div class="schedule-container">
-                <div class="schedule-card">
-                    <h3 class="schedule-title">Церемония</h3>
-                    <div class="schedule-time">17:00</div>
-                    <div class="schedule-location">Дворец бракосочетания</div>
-                    <div class="schedule-location">г. Алматы, ул. Кожабекова, 21/1</div>
-                    <button class="map-btn" onclick="open2GIS()">OPEN MAP</button>
-                </div>
-                <div class="schedule-card">
-                    <h3 class="schedule-title">Рецепция</h3>
-                    <div class="schedule-time">19:00</div>
-                    <div class="schedule-location">Ресторан "Аруана"</div>
-                    <div class="schedule-location">г. Алматы, пр. Абая, 52</div>
-                    <button class="map-btn" onclick="open2GISReception()">OPEN MAP</button>
-                </div>
+        <!-- Wedding Date Section -->
+        <section class="wedding-date-section">
+            <div class="pattern-bg">
+                <div class="pattern-layer-1" style="background-image: url('https://i.pinimg.com/236x/fb/a8/04/fba804ed2f2d42e897fd15bb0cb5eebf.jpg?nii=t');"></div>
+                <div class="pattern-layer-2" style="background-image: url('https://i.pinimg.com/236x/fb/a8/04/fba804ed2f2d42e897fd15bb0cb5eebf.jpg?nii=t');"></div>
             </div>
-        </div>
-    </section>
 
-    <!-- Секция подтверждения -->
-    <section id="rsvp">
-        <div class="container">
-            <h2 class="wedding-title">Мы ждем вас!</h2>
-            <div class="couple-names">Подтвердите участие</div>
-            
-            <form class="rsvp-form">
-                <div class="form-group">
-                    <label class="form-label">Ваше имя</label>
-                    <input type="text" class="form-input" placeholder="Введите ваше имя" required>
-                </div>
+            <div class="content-inner">
+                <h3 class="wedding-date-title">Қантардын</h3>
+                <div class="wedding-date-large">17</div>
+                <p class="wedding-time">САҒАТ 19:00 ДЕ БАСТАЛАДЫ</p>
                 
-                <div class="form-group">
-                    <label class="form-label">Имя партнера (если будет с вами)</label>
-                    <input type="text" class="form-input" placeholder="Введите имя партнера">
-                </div>
-                
-                <div class="form-group">
-                    <label class="form-label">Email</label>
-                    <input type="email" class="form-input" placeholder="Введите ваш email" required>
-                </div>
-                
-                <div class="form-group">
-                    <label class="form-label">Вы придете?</label>
-                    <div class="attending-options">
-                        <div class="attending-option">
-                            <input type="radio" id="attend-yes" name="attending" value="yes" checked>
-                            <label for="attend-yes" class="attending-label">Да, буду</label>
-                        </div>
-                        <div class="attending-option">
-                            <input type="radio" id="attend-no" name="attending" value="no">
-                            <label for="attend-no" class="attending-label">Не смогу</label>
-                        </div>
+                <div class="countdown-timer">
+                    <div class="timer-item">
+                        <div class="timer-number" id="days">65</div>
+                        <div class="timer-label">Күн</div>
+                    </div>
+                    <div class="timer-item">
+                        <div class="timer-number" id="hours">14</div>
+                        <div class="timer-label">Сағат</div>
+                    </div>
+                    <div class="timer-item">
+                        <div class="timer-number" id="minutes">49</div>
+                        <div class="timer-label">Минут</div>
+                    </div>
+                    <div class="timer-item">
+                        <div class="timer-number" id="seconds">39</div>
+                        <div class="timer-label">Секунд</div>
                     </div>
                 </div>
-                
-                <button type="submit" class="submit-btn">ПОДТВЕРДИТЬ</button>
-            </form>
-        </div>
-    </section>
+            </div>
+        </section>
 
-    <!-- Футер -->
-    <footer>
-        <div class="container">
-            <div class="footer-names">Рымыз & Сезім</div>
-            <div class="footer-date">17 января 2026 года</div>
-            <p class="footer-text">Мы с нетерпением ждем этот особенный день с вами! Ваше присутствие сделает наш праздник еще более ярким и запоминающимся.</p>
-        </div>
-    </footer>
+        <!-- Location Section -->
+        <section class="location-section">
+            <div class="pattern-bg">
+                <div class="pattern-layer-1" style="background-image: url('https://i.pinimg.com/236x/fb/a8/04/fba804ed2f2d42e897fd15bb0cb5eebf.jpg?nii=t');"></div>
+                <div class="pattern-layer-2" style="background-image: url('https://i.pinimg.com/236x/fb/a8/04/fba804ed2f2d42e897fd15bb0cb5eebf.jpg?nii=t');"></div>
+            </div>
+
+            <div class="content-inner">
+                <!-- Location Icon -->
+                <div class="location-icon">
+                    <div class="map-pin-container">
+                        <svg width="80" height="80" viewBox="0 0 24 24" fill="#5a7a5a" stroke="#5a7a5a" stroke-width="1.5">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3" fill="white" stroke="none"></circle>
+                        </svg>
+                        <svg style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 28px; height: 28px;" viewBox="0 0 24 24" fill="white">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                        </svg>
+                    </div>
+                </div>
+
+                <h3 class="location-label">МЕКЕН-ЖАЙЫМЫЗ:</h3>
+
+                <p class="location-address">
+                    ОРА ҚАЛАСЫ<br>
+                    ҚОЖАБЕКОВА КӨШЕСІ, 21/1
+                </p>
+
+                <h2 class="venue-name">Sky Hall</h2>
+                <p class="venue-type">МЕЙРАМХАНАСЫ</p>
+
+                <!-- Navigator Button -->
+                <div class="navigator-button-container">
+                    <a href="https://2gis.kz/almaty" target="_blank" class="navigator-button">
+                        <div class="navigator-icon">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="white" stroke="white" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            </svg>
+                        </div>
+                        <span class="navigator-text">2GIS НАВИГАТОР</span>
+                    </a>
+                </div>
+
+                <!-- RSVP Form -->
+                <div class="rsvp-form">
+                    <h3 class="form-title">Қатысуды растау</h3>
+
+                    <form id="rsvpForm" onsubmit="handleSubmit(event)">
+                        <div class="form-group">
+                            <label class="form-label">АТЫ-ЖӨНІҢІЗ</label>
+                            <input type="text" id="guestName" class="form-input" placeholder="Толық аты-жөніңіз" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">СЕРІК (МІНДЕТТІ ЕМЕС)</label>
+                            <input type="text" id="partnerName" class="form-input" placeholder="Серігіңіздің аты-жөні">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">ТЕЛЕФОН НӨМІРІ</label>
+                            <input type="tel" id="phone" class="form-input" placeholder="+7 (___) ___-__-__" required>
+                        </div>
+
+                        <div class="checkbox-container">
+                            <div class="checkbox" id="attendingCheckbox" onclick="toggleCheckbox()">
+                                <svg class="checkbox-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                            </div>
+                            <label class="checkbox-label" onclick="toggleCheckbox()">Міндетті түрде қатысамын</label>
+                        </div>
+
+                        <button type="submit" class="submit-button">ЖІБЕРУ</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
 
     <script>
-        // Генерация календаря на январь 2026
-        function generateCalendar() {
-            const calendarDays = document.getElementById('calendar-days');
-            calendarDays.innerHTML = '';
-            
-            // Январь 2026 начинается с четверга (0 - воскресенье, 1 - понедельник, ...)
-            const firstDay = 4; // Четверг
-            const daysInMonth = 31;
-            const weddingDay = 17;
-            
-            // Добавляем пустые ячейки для дней до начала месяца
-            for (let i = 0; i < firstDay; i++) {
-                const emptyDay = document.createElement('div');
-                emptyDay.className = 'calendar-day other-month';
-                calendarDays.appendChild(emptyDay);
-            }
-            
-            // Добавляем дни месяца
-            for (let day = 1; day <= daysInMonth; day++) {
-                const dayElement = document.createElement('div');
-                dayElement.className = 'calendar-day';
-                dayElement.textContent = day;
-                
-                // Выделяем день свадьбы
-                if (day === weddingDay) {
-                    dayElement.classList.add('wedding-day');
-                    dayElement.innerHTML = `${day}<br><small>Свадьба!</small>`;
-                }
-                
-                calendarDays.appendChild(dayElement);
+        let isAttending = false;
+
+        function toggleCheckbox() {
+            isAttending = !isAttending;
+            const checkbox = document.getElementById('attendingCheckbox');
+            if (isAttending) {
+                checkbox.classList.add('checked');
+            } else {
+                checkbox.classList.remove('checked');
             }
         }
-        
-        // Обратный отсчет до свадьбы (17 января 2026)
+
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            const formData = {
+                guest: document.getElementById('guestName').value,
+                partner: document.getElementById('partnerName').value,
+                phone: document.getElementById('phone').value,
+                attending: isAttending,
+                withPartner: document.getElementById('partnerName').value.length > 0
+            };
+
+            console.log('RSVP Submitted:', formData);
+            alert('Рахмет! Сіздің жауабыңыз қабылданды!');
+
+            // Здесь можно добавить отправку данных на сервер
+            // fetch('your-api-endpoint', {
+            //     method: 'POST',
+            //     headers: { 'Content-Type': 'application/json' },
+            //     body: JSON.stringify(formData)
+            // });
+        }
+
+        // Phone mask
+        const phoneInput = document.getElementById('phone');
+        phoneInput.addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length > 0) {
+                if (value[0] !== '7') {
+                    value = '7' + value;
+                }
+                let formatted = '+7';
+                if (value.length > 1) {
+                    formatted += ' (' + value.substring(1, 4);
+                }
+                if (value.length >= 5) {
+                    formatted += ') ' + value.substring(4, 7);
+                }
+                if (value.length >= 8) {
+                    formatted += '-' + value.substring(7, 9);
+                }
+                if (value.length >= 10) {
+                    formatted += '-' + value.substring(9, 11);
+                }
+                e.target.value = formatted;
+            }
+        });
+
+        // Countdown Timer
         function updateCountdown() {
-            const weddingDate = new Date('2026-01-17T17:00:00');
+            const weddingDate = new Date('2026-01-17T19:00:00');
             const now = new Date();
             const diff = weddingDate - now;
-            
+
             if (diff <= 0) {
-                document.getElementById('days').textContent = '0';
-                document.getElementById('hours').textContent = '0';
-                document.getElementById('minutes').textContent = '0';
-                document.getElementById('seconds').textContent = '0';
+                document.getElementById('days').textContent = '00';
+                document.getElementById('hours').textContent = '00';
+                document.getElementById('minutes').textContent = '00';
+                document.getElementById('seconds').textContent = '00';
                 return;
             }
-            
+
             const days = Math.floor(diff / (1000 * 60 * 60 * 24));
             const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-            
-            document.getElementById('days').textContent = days;
-            document.getElementById('hours').textContent = hours;
-            document.getElementById('minutes').textContent = minutes;
-            document.getElementById('seconds').textContent = seconds;
+
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
         }
-        
-        // Плавная прокрутка
-        function scrollToSection(sectionId) {
-            document.getElementById(sectionId).scrollIntoView({
-                behavior: 'smooth'
-            });
-        }
-        
-        // Открытие 2GIS для церемонии
-        function open2GIS() {
-            const lat = 43.2389;
-            const lon = 76.8897;
-            window.open(`https://2gis.kz/almaty/geo/${lon},${lat}`, '_blank');
-        }
-        
-        // Открытие 2GIS для рецепции
-        function open2GISReception() {
-            const lat = 43.2350;
-            const lon = 76.9452;
-            window.open(`https://2gis.kz/almaty/geo/${lon},${lat}`, '_blank');
-        }
-        
-        // Анимация при прокрутке
-        const observerOptions = {
-            threshold: 0.1
-        };
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.animation = 'fadeInUp 1s ease-out forwards';
-                }
-            });
-        }, observerOptions);
-        
-        // Наблюдаем за всеми секциями
-        document.querySelectorAll('section').forEach(section => {
-            observer.observe(section);
-        });
-        
-        // Обработка формы
-        document.querySelector('.rsvp-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Спасибо за подтверждение! Мы ждем вас на нашей свадьбе!');
-            this.reset();
-        });
-        
-        // Инициализация
-        generateCalendar();
+
+        // Update countdown every second
         setInterval(updateCountdown, 1000);
-        updateCountdown();
+        updateCountdown(); // Initial call
     </script>
 </body>
 </html>
